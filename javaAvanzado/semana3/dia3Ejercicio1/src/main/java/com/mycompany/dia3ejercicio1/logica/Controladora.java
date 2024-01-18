@@ -14,34 +14,49 @@ import java.util.List;
  * @author rodri
  */
 public class Controladora {
-
-    ControladoraPersistencia controlEquipo = new ControladoraPersistencia();
-    ControladoraPersistencia controlPartido = new ControladoraPersistencia();
     
-
+    ControladoraPersistencia control = new ControladoraPersistencia();
+   
+    //COmtrolEquipo
     public void createEquipo(String equipoNew) {
-        controlEquipo.addEquipo(new Equipo(equipoNew));
+        control.addEquipo(new Equipo(equipoNew));
     }
-
+    
     public List<Equipo> listarEquipos() {
-        return controlEquipo.listaEquipo();
+        return control.listaEquipo();
     }
-    
-    
+
     //Obtenemos equipo por el id para seleccionar equipo por id al crear partidos en el servlet -> SvPArtidos
-    public Equipo obtenerEquipo(int id){
-    return controlEquipo.equipoId(id);
+    public Equipo obtenerEquipo(int id) {
+        return control.equipoId(id);
     }
- 
     
-    
-    public void createPartido( LocalDate fecha, int puntoLocal, int puntoVisitante, Equipo local, Equipo visitante) {
-
-        controlPartido.addPartido(new Partido(fecha, puntoLocal, puntoVisitante, local, visitante));
-
+    public void borrarEquipo(int idEliminar) {
+        control.elimIdEqu(idEliminar);
     }
 
+    //COmtrolPartido
+    public void createPartido(LocalDate fecha, int puntoLocal, int puntoVisitante, Equipo local, Equipo visitante) {
+        
+        control.addPartido(new Partido(fecha, puntoLocal, puntoVisitante, local, visitante));
+        
+    }
+    
     public List<Partido> listarPartidos() {
-    return controlPartido.listaPartido();
+        return control.listaPartido();
     }
+    
+    public void borrarPartido(int idEliminar) {
+        control.elimIdPart(idEliminar);
+    }
+
+
+
+    public void editEquipo(String nombre,Equipo equipo){
+        //modificación en la LÓGICA
+        equipo.setNombre(nombre);
+        control.modificarEquipo( equipo);
+    }
+
+    
 }

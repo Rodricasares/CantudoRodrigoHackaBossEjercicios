@@ -49,16 +49,53 @@
                 <button  class="btn btn-primary  mt-3" type="submit">Enviar Registrar Equipo</button>
             </form>
         </div>
+        <!-- Boton listar Equipos -->
         <div>
             <form action="Servlet" method="GET"  class="m-3 border border-ligh rounded p-3">
                 <h1 class=" text-light mt-3">Listar Equipos</h1><br><br>
-                <button type="submit" class="btn btn-danger  mt-3">Buscar Equipo...</button>
+                <button type="submit" class="btn btn-warning mt-3">Buscar Equipo...</button>
 
             </form> 
         </div>
+     <!-- Eliminar equipo -->
+            
 
+       <div>
+
+            <form  class="m-3 border border-ligh rounded p-3 " action="SvEliminarEquipo"  method="POST">
+
+
+                <div class="form-group">
+                    <h1 class=" text-light mt-3">Eliminar Equipo</h1><br><br>
+                    <label class="form-label text-light" for="nombre">Id de Equipo a eliminar: </label>
+                    <input class="text-dark" type="text" name="idEliminarEquipo" placeholder="id Equipo" id="idEliminarEquipo"> 
+
+                </div>  
+                <button  class="btn btn-danger  mt-3" type="submit">Eliminar Equipo</button>
+            </form>
+        </div>
+     <!-- Editar equipo -->
+            
+
+       <div>
+
+            <form  class="m-3 border border-ligh rounded p-3 " action="SvEditEquipo"  method="GET">
+
+
+                <div class="form-group">
+                    <h1 class=" text-light mt-3">Editar Equipo</h1><br><br>
+                    <label class="form-label text-light" for="nombre">Id de Equipo a Editar: </label>
+                    <input class="text-dark" type="text" name="idEquipoEditar" placeholder="id Equipo" id="idEquipoEditar"> 
+
+                </div>  
+                <button  class="btn btn-success  mt-3" type="submit">Editar Equipo</button>
+            </form>
+        </div>
+     <!--Titulo h1 & h2 Partido-->
+        
         <div class="text-center"><h1 class="text-center text-light">Liga de Baloncesto Hack a Boss</h1><br><h2 class="text-center text-light">Partidos</h2></div>
 
+   
         <!--Registrar Partidos-->
 
         <div>
@@ -109,26 +146,8 @@
                 </div>  
                 <button  class="btn btn-primary  mt-3" type="submit">Enviar Registrar Equipo</button>
             </form>
-
-
         </div>
-
-
-
-        <!-- comment -->
-
-
-
-
-
-
-
-
-
-
-
-
-
+       <!--Listar Partidos-->
 
         <div>
             <form action="SvPartidos" method="GET"  class="m-3 border border-ligh rounded p-3">
@@ -137,6 +156,21 @@
 
             </form> 
         </div>
+     <!--Eliminar Partido-->
 
+       <div>
+
+            <form  class="m-3 border border-ligh rounded p-3 " action="SvEliminarPartido"  method="POST">
+
+
+                <div class="form-group">
+                    <h1 class=" text-light mt-3">Eliminar Partido</h1><br><br>
+                    <label class="form-label text-light" for="nombre">Id de Partido a eliminar: </label>
+                    <input class="text-dark" type="text" name="idEliminarPartido" placeholder="id Partido" id="idEliminarPartido"> 
+
+                </div>  
+                <button  class="btn btn-primary  mt-3" type="submit">Eliminar Partido</button>
+            </form>
+        </div>
     </body>
 </html>

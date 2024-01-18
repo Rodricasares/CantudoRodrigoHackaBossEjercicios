@@ -13,6 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Liga de baloncesto</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
         <style>
             #listarEquipos {
                 width: 90%;
@@ -55,6 +56,10 @@
                      <th class="text-light border border-ligh ">
                         Día de partido
                     </th>
+                      <th class="text-light border border-ligh ">
+                        Eliminar /editar
+                    </th>
+                    <th sty
                     <th style="width: 210px"></th>
                 </tr>
             </thead>
@@ -70,7 +75,12 @@
                 <td class="text-light border border-ligh"><%= match.getPuntuacionLocal()%></td>
                 <td class="text-light border border-ligh"><%= match.getPuntuacionVisitante()%></td>
                 <td class="text-light border border-ligh"><%= match.getFecha()%></td>
-                <td class="text-light border border-ligh text-center">Eliminar/Editar</td>
+                <td class="text-light border border-ligh text-center"  <td class="text-light border border-ligh text-center"> 
+                        <form action="SvEliminarPartido" method="POST">
+                            <input type="hidden" name="idEliminarPartido" value="<%=match.getId()%>">
+                            <button type="submit" class="btn btn-danger m-2"><i class="bi bi-trash3"></i></button>
+                        </form>
+                    </td></td>
             </tr>
             <%
                 }

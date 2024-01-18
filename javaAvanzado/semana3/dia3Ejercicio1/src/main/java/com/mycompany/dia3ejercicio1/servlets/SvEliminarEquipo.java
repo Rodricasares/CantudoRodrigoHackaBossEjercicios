@@ -1,21 +1,25 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
+ */
 package com.mycompany.dia3ejercicio1.servlets;
 
 import com.mycompany.dia3ejercicio1.logica.Controladora;
-import com.mycompany.dia3ejercicio1.logica.Equipo;
 import java.io.IOException;
-import java.util.List;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-@WebServlet(name = "Servlet", urlPatterns = {"/Servlet"})
-public class Servlet extends HttpServlet {
+/**
+ *
+ * @author rodri
+ */
+@WebServlet(name = "SvEliminarEquipo", urlPatterns = {"/SvEliminarEquipo"})
+public class SvEliminarEquipo extends HttpServlet {
 
-    private static final long serialVersionUID = 1L;
-    //ArrayList<Equipo> listEquipos = new ArrayList<>();
     Controladora control = new Controladora();
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -27,31 +31,16 @@ public class Servlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-        List<Equipo> listarEquipos = control.listarEquipos();
-
-        HttpSession misesion = request.getSession();
-        misesion.setAttribute("listarEquipos", listarEquipos);
-
-        //Redireccionar 
-        System.out.println(listarEquipos);
-        System.out.println("doGet lista equipos");
-        response.sendRedirect("searchEquipo.jsp");
-
     }
 
-    @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
 
-        String equipoNew = request.getParameter("nombre");
+        int idEliminar = Integer.parseInt(request.getParameter("idEliminarEquipo"));
 
-        System.out.println("doPost \n");
-        System.out.println("Eqiopo: " + equipoNew);
-
-        control.createEquipo(equipoNew);
+        control.borrarEquipo(idEliminar);
         response.sendRedirect("index.jsp");
-
     }
 
     @Override
