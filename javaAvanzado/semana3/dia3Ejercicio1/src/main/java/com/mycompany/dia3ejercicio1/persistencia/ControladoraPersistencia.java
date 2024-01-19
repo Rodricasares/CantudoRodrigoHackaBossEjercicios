@@ -66,6 +66,8 @@ public class ControladoraPersistencia {
     public void modificarEquipo(Equipo equipo) {
         try {
             equipoJpa.edit(equipo);
+            
+               System.out.println("Metodo modif");
         } catch (Exception ex) {
             Logger.getLogger(ControladoraPersistencia.class.getName()).log(Level.SEVERE, null, ex);
         }

@@ -55,7 +55,8 @@ public class Controladora {
     public void editEquipo(String nombre,Equipo equipo){
         //modificación en la LÓGICA
         equipo.setNombre(nombre);
-        control.modificarEquipo( equipo);
+        control.modificarEquipo(equipo);
+         System.out.println("Metodo edit");
     }
 
     

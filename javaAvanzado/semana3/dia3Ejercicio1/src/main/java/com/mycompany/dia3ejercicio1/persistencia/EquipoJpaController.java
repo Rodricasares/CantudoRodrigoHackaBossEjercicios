@@ -56,6 +56,7 @@ public class EquipoJpaController implements Serializable {
             em.getTransaction().begin();
             equipo = em.merge(equipo);
             em.getTransaction().commit();
+               System.out.println("Metodo editDAO");
         } catch (Exception ex) {
             String msg = ex.getLocalizedMessage();
             if (msg == null || msg.length() == 0) {

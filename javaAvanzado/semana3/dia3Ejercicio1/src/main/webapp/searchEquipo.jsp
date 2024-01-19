@@ -59,10 +59,15 @@
                 <tr>
 
                     <td class="text-light border border-ligh"><%=team.getNombre()%></td>
-                    <td class="text-light border border-ligh text-center"> 
+                    <td class="text-light border border-ligh text-center d-flex justify-content-center p-1"> 
                         <form action="SvEliminarEquipo" method="POST">
                             <input type="hidden" name="idEliminarEquipo" value="<%=team.getId()%>">
                             <button type="submit" class="btn btn-danger m-2"><i class="bi bi-trash3"></i></button>
+                        </form>
+                   
+                        <form action="SvEditEquipo" method="POST">
+                            <input type="hidden" name="idEquipo" value="<%=team.getId()%>">
+                            <button type="submit" class="btn btn-success m-2"><i class="bi bi-pencil"></i></button>
                         </form>
                     </td>
                                    </tr>

@@ -53,10 +53,11 @@ public class SvEditEquipo extends HttpServlet {
         System.out.println("doPost Editar Equipo \n");
         System.out.println("--------------------------------------------------");
         System.out.println("atributo guardado: " + ((Equipo) request.getSession().getAttribute("idEquipo")).toString());
-
+        
         control.editEquipo(nombre, (Equipo) request.getSession().getAttribute("idEquipo"));
 
-        
+        response.sendRedirect("editEquipo.jsp");
+
     }
 
     @Override
