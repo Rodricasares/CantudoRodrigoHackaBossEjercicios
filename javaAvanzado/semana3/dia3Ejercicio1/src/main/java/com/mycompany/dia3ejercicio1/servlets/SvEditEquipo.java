@@ -47,7 +47,7 @@ public class SvEditEquipo extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-
+     
         String nombre = request.getParameter("nombre");
 
         System.out.println("doPost Editar Equipo \n");

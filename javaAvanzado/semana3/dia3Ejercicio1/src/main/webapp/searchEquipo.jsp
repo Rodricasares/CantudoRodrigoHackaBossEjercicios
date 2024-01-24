@@ -13,7 +13,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Liga de baloncesto</title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
         <style>
             #listarEquipos {
@@ -42,7 +42,7 @@
                     <th class="text-light border border-ligh ">
                         Equipos
                     </th>
-                       <th class="text-light border border-ligh ">
+                    <th class="text-light border border-ligh ">
                         Eliminar/Editar
                     </th>
 
@@ -64,13 +64,11 @@
                             <input type="hidden" name="idEliminarEquipo" value="<%=team.getId()%>">
                             <button type="submit" class="btn btn-danger m-2"><i class="bi bi-trash3"></i></button>
                         </form>
-                   
-                        <form action="SvEditEquipo" method="POST">
-                            <input type="hidden" name="idEquipo" value="<%=team.getId()%>">
-                            <button type="submit" class="btn btn-success m-2"><i class="bi bi-pencil"></i></button>
-                        </form>
+
+                        <a href="editEquipo.jsp"> <button type="submit" class="btn btn-success m-2"><i class="bi bi-pencil"></i></button></a>
+
                     </td>
-                                   </tr>
+                </tr>
                 <%}%> 
             </tbody>
             <%--
